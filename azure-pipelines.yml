@@ -19,42 +19,45 @@ steps:
     arguments: '--configuration $(buildConfiguration)'
   displayName: 'dotnet build $(buildConfiguration)'
   
-# - task: DotNetCoreCLI@2
-#   displayName: 'Test'
-#   inputs:
-#     command: test
-#     projects: '**/Unitest.csproj'
-#     publishTestResults: true
-#     arguments: '--configuration $(buildConfiguration)
-#                 --collect "Code coverage"' 
-
 - task: DotNetCoreCLI@2
   displayName: 'Test'
   inputs:
-    command: 'test'
+    command: test
     projects: '**/Unitest.csproj'
-    arguments: '--configuration $(buildConfiguration) --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=cobertura'
     publishTestResults: true
+    arguments: '--configuration $(buildConfiguration)
+                --collect "Code coverage"' 
+
+- script: dotnet test UnitTestCase.sln --logger trx /p:CollectCoverage=true /p:CoverletOutput=BuildReports\Coverage\ /p:CoverletOutputFormat=cobertura --collect "Code coverage"
+  continueOnError: true
+# - task: DotNetCoreCLI@2
+#   displayName: 'Test'
+#   inputs:
+#     command: 'test'
+#     projects: '**/Unitest.csproj'
+#     arguments: '--configuration $(buildConfiguration) --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=cobertura'
+#     publishTestResults: true
  
   
 - task: PublishCodeCoverageResults@1
   displayName: 'Publish code coverage report'
+  continueOnError: true
   inputs:
-    codeCoverageTool: 'Cobertura'
-    summaryFileLocation: '$(Agent.TempDirectory)/**/coverage.cobertura.xml'
+    codeCoverageTool: 'Cobertura'    
+    summaryFileLocation: '**/*coverage.cobertura.xml'
             
                
-- task: reportgenerator@5
-  displayName: Code coverage publish
-  inputs:
-    reports: '**/*coverage.cobertura.xml'
-    targetdir: 'coveragereport'
+# - task: reportgenerator@5
+#   displayName: Code coverage publish
+#   inputs:
+#     reports: '**/*coverage.cobertura.xml'
+#     targetdir: 'coveragereport'
 
-- task: PublishCodeCoverageResults@1
-  displayName: 'Publish code coverage'
-  inputs:
-    codeCoverageTool: 'Cobertura'
-    summaryFileLocation: '**/*coverage.cobertura.xml'
+# - task: PublishCodeCoverageResults@1
+#   displayName: 'Publish code coverage'
+#   inputs:
+#     codeCoverageTool: 'Cobertura'
+#     summaryFileLocation: '**/*coverage.cobertura.xml'
 - task: BuildQualityChecks@8
   inputs:
     checkCoverage: true

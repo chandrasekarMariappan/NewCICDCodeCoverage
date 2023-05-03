@@ -26,12 +26,15 @@ steps:
     projects: '**/Unitest.csproj'
     publishTestResults: true
     arguments: '--configuration $(buildConfiguration)
-                --collect "Code coverage"'              
-               
-- task: reportgenerator@5
+                --collect "Code coverage"' 
+
+- task: DotNetCoreCLI@2
+  displayName: 'Publish report'
   inputs:
-      reports: 'coverage.xml'
-      targetdir: 'coveragereport'
+   command: test
+   arguments:  '/p:CoverletOutput=BuildReports\Coverage\ /p:CoverletOutputFormat=cobertura /p:Exclude="[xunit.*]*'
+            
+               
 - task: reportgenerator@5
   displayName: Code coverage publish
   inputs:

@@ -42,7 +42,7 @@ steps:
   displayName: 'Publish code coverage'
   inputs:
     codeCoverageTool: 'Cobertura'
-    summaryFileLocation: '**/*coverage.xml'
+    summaryFileLocation: '**/*coverage.cobertura.xml'
 - task: BuildQualityChecks@8
   inputs:
     checkCoverage: true

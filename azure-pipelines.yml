@@ -26,7 +26,7 @@ steps:
     projects: '**/Unitest.csproj'
     publishTestResults: true
     arguments: '--configuration $(buildConfiguration)
-                --collect "Code coverage" 
+                --collect "Code coverage"
                 --results-directory /p:CollectCoverage=true /p:CoverletOutput=$(Agent.TempDirectory)\BuildReports\Coverage\ /p:CoverletOutputFormat=cobertura /p:Exclude="[xunit.*]*'
                
                 

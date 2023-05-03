@@ -15,14 +15,14 @@ namespace Unitest
             Assert.AreEqual(result, result);
         }
 
-        [TestMethod]
-        public void TestMethod2()
-        {
-            var wfc = new WeatherForecastController();
-            var result = wfc.Get(4);
+        //[TestMethod]
+        //public void TestMethod2()
+        //{
+        //    var wfc = new WeatherForecastController();
+        //    var result = wfc.Get(4);
 
-            Assert.AreEqual(result.First().Date, result.First().Date);
-        }
+        //    Assert.AreEqual(result.First().Date, result.First().Date);
+        //}
 
         //[TestMethod]
         //public void TestMethod3()

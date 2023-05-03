@@ -29,7 +29,7 @@ steps:
                 --collect "Code coverage"' 
 
 - script: dotnet test UnitTestCase.sln --logger trx /p:CollectCoverage=true /p:CoverletOutput=BuildReports\Coverage\ /p:CoverletOutputFormat=cobertura --collect "Code coverage"
-
+    
 # - task: DotNetCoreCLI@2
 #   displayName: 'Test'
 #   inputs:
@@ -41,8 +41,9 @@ steps:
   
 - task: PublishCodeCoverageResults@1
   displayName: 'Publish code coverage report'
+  continueOnError: true
   inputs:
-    codeCoverageTool: 'Cobertura'
+    codeCoverageTool: 'Cobertura'    
     summaryFileLocation: '**/*coverage.cobertura.xml'
             
                

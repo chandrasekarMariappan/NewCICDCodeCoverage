@@ -41,20 +41,20 @@ steps:
   displayName: 'Publish code coverage report'
   inputs:
     codeCoverageTool: 'Cobertura'
-    summaryFileLocation: '$(Agent.TempDirectory)/**/coverage.cobertura3.xml'
+    summaryFileLocation: '$(Agent.TempDirectory)/**/coverage.cobertura.xml'
             
                
 - task: reportgenerator@5
   displayName: Code coverage publish
   inputs:
-    reports: '**/*coverage.cobertura3.xml'
+    reports: '**/*coverage.cobertura.xml'
     targetdir: 'coveragereport'
 
 - task: PublishCodeCoverageResults@1
   displayName: 'Publish code coverage'
   inputs:
     codeCoverageTool: 'Cobertura'
-    summaryFileLocation: '**/*coverage.cobertura3.xml'
+    summaryFileLocation: '**/*coverage.cobertura.xml'
 - task: BuildQualityChecks@8
   inputs:
     checkCoverage: true

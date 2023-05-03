@@ -26,10 +26,12 @@ steps:
     projects: '**/Unitest.csproj'
     publishTestResults: true
     arguments: '--configuration $(buildConfiguration)
-                --collect "Code coverage"
-                --results-directory /p:CollectCoverage=true /p:CoverletOutput=$(Agent.TempDirectory)\BuildReports\Coverage\ /p:CoverletOutputFormat=cobertura /p:Exclude="[xunit.*]*'
+                --collect "Code coverage"'              
                
-                
+- task: reportgenerator@5
+  inputs:
+      reports: 'coverage.xml'
+      targetdir: 'coveragereport'
 - task: reportgenerator@5
   displayName: Code coverage publish
   inputs:
@@ -40,7 +42,7 @@ steps:
   displayName: 'Publish code coverage'
   inputs:
     codeCoverageTool: 'Cobertura'
-    summaryFileLocation: '**/*coverage.cobertura.xml'
+    summaryFileLocation: '**/*coverage.xml'
 - task: BuildQualityChecks@8
   inputs:
     checkCoverage: true

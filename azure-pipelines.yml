@@ -32,9 +32,10 @@ steps:
   displayName: 'Test'
   inputs:
     command: 'test'
+    projects: '**/Unitest.csproj'
     arguments: '--configuration $(buildConfiguration) --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=cobertura'
     publishTestResults: true
-    projects: 'MyTestLibrary' # update with your test project directory
+ 
   
 - task: PublishCodeCoverageResults@1
   displayName: 'Publish code coverage report'

@@ -13,22 +13,22 @@ steps:
     command: 'restore'
     
 
-# - task: DotNetCoreCLI@2
-#   inputs:
-#     command: 'build'
-#     arguments: '--configuration $(buildConfiguration)'
-#   displayName: 'dotnet build $(buildConfiguration)'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    arguments: '--configuration $(buildConfiguration)'
+  displayName: 'dotnet build $(buildConfiguration)'
   
-# - task: DotNetCoreCLI@2
-#   displayName: 'Test'
-#   inputs:
-#     command: test
-#     projects: '**/Unitest.csproj'
-#     publishTestResults: true
-#     arguments: '--configuration $(buildConfiguration)
-#                 --collect "Code coverage"' 
+- task: DotNetCoreCLI@2
+  displayName: 'Test'
+  inputs:
+    command: test
+    projects: '**/Unitest.csproj'
+    publishTestResults: true
+    arguments: '--configuration $(buildConfiguration)
+                --collect "Code coverage"' 
 
-- script: dotnet test UnitTestCase.sln --logger trx /p:CollectCoverage=true /p:CoverletOutput=BuildReports\Coverage\ /p:CoverletOutputFormat=cobertura --collect "Code coverage"
+- script: dotnet test **/Unitest.csproj --logger trx /p:CollectCoverage=true /p:CoverletOutput=BuildReports\Coverage\ /p:CoverletOutputFormat=cobertura --collect "Code coverage"
 
 # - task: DotNetCoreCLI@2
 #   displayName: 'Test'

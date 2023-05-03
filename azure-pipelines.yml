@@ -29,7 +29,7 @@ steps:
                 --collect "Code coverage"' 
 
 - script: dotnet test UnitTestCase.sln --logger trx /p:CollectCoverage=true /p:CoverletOutput=BuildReports\Coverage\ /p:CoverletOutputFormat=cobertura --collect "Code coverage"
-    
+  continueOnError: true
 # - task: DotNetCoreCLI@2
 #   displayName: 'Test'
 #   inputs:

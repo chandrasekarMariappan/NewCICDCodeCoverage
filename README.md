@@ -12,3 +12,7 @@ https://stackoverflow.com/questions/68542280/could-not-find-a-test-logger-with-a
 
 https://stackoverflow.com/questions/74024503/how-can-i-fail-the-pipeline-if-the-code-coverage-is-below-70-in-azure-devops
 
+
+https://stackoverflow.com/questions/64592534/publish-a-pipeline-azure-devops-code-coverage-report
+
+

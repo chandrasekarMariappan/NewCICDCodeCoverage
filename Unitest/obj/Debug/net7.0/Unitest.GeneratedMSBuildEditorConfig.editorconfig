@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Unitest
-build_property.ProjectDir = D:\Projects\UnitTestCase\Unitest\
+build_property.ProjectDir = D:\Projects\CICD Code coverage\Unitest\

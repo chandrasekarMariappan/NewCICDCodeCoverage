@@ -8,12 +8,24 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+app.UseDeveloperExceptionPage();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+	try
+	{
+        app.UseSwagger();
+        app.UseSwaggerUI();
+        
+
+    }
+	catch (Exception ex)
+	{
+
+		var s= ex;
+	}
+   
 }
 
 app.UseAuthorization();

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\UnitTestCase\\UnitTestCase\\UnitTestCase.csproj": {}
+    "D:\\Projects\\CICD Code coverage\\UnitTestCase\\UnitTestCase.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\UnitTestCase\\UnitTestCase\\UnitTestCase.csproj": {
+    "D:\\Projects\\CICD Code coverage\\UnitTestCase\\UnitTestCase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\UnitTestCase\\UnitTestCase\\UnitTestCase.csproj",
+        "projectUniqueName": "D:\\Projects\\CICD Code coverage\\UnitTestCase\\UnitTestCase.csproj",
         "projectName": "UnitTestCase",
-        "projectPath": "D:\\Projects\\UnitTestCase\\UnitTestCase\\UnitTestCase.csproj",
+        "projectPath": "D:\\Projects\\CICD Code coverage\\UnitTestCase\\UnitTestCase.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\UnitTestCase\\UnitTestCase\\obj\\",
+        "outputPath": "D:\\Projects\\CICD Code coverage\\UnitTestCase\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

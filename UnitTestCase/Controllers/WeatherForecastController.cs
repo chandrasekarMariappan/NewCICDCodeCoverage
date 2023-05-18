@@ -13,7 +13,9 @@ namespace UnitTestCase.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-       
+        public WeatherForecastController()
+        {
+        }
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
@@ -32,16 +34,16 @@ namespace UnitTestCase.Controllers
             .ToArray();
         }
 
-        //[HttpGet(Name = "GetWeatherForecastById")]
-        //public IEnumerable<WeatherForecast> Get(int id)
-        //{
-        //    return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-        //    {
-        //        Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-        //        TemperatureC = Random.Shared.Next(-20, 55),
-        //        Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-        //    })
-        //    .ToArray();
-        //}
+        [HttpGet(Name = "GetWeatherForecastById")]
+        public IEnumerable<WeatherForecast> Get(int id)
+        {
+            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            {
+                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+                TemperatureC = Random.Shared.Next(-20, 55),
+                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+            })
+            .ToArray();
+        }
     }
 }

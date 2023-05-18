@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\CICD Code coverage\\Unitest\\Unitest.csproj": {}
+    "D:\\Projects\\CICD Code coverage_working\\Unitest\\Unitest.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\CICD Code coverage\\Unitest\\Unitest.csproj": {
+    "D:\\Projects\\CICD Code coverage_working\\Unitest\\Unitest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\CICD Code coverage\\Unitest\\Unitest.csproj",
+        "projectUniqueName": "D:\\Projects\\CICD Code coverage_working\\Unitest\\Unitest.csproj",
         "projectName": "Unitest",
-        "projectPath": "D:\\Projects\\CICD Code coverage\\Unitest\\Unitest.csproj",
+        "projectPath": "D:\\Projects\\CICD Code coverage_working\\Unitest\\Unitest.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\CICD Code coverage\\Unitest\\obj\\",
+        "outputPath": "D:\\Projects\\CICD Code coverage_working\\Unitest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\Projects\\CICD Code coverage\\UnitTestCase\\UnitTestCase.csproj": {
-                "projectPath": "D:\\Projects\\CICD Code coverage\\UnitTestCase\\UnitTestCase.csproj"
+              "D:\\Projects\\CICD Code coverage_working\\UnitTestCase\\UnitTestCase.csproj": {
+                "projectPath": "D:\\Projects\\CICD Code coverage_working\\UnitTestCase\\UnitTestCase.csproj"
               }
             }
           }
@@ -97,14 +97,14 @@
         }
       }
     },
-    "D:\\Projects\\CICD Code coverage\\UnitTestCase\\UnitTestCase.csproj": {
+    "D:\\Projects\\CICD Code coverage_working\\UnitTestCase\\UnitTestCase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\CICD Code coverage\\UnitTestCase\\UnitTestCase.csproj",
+        "projectUniqueName": "D:\\Projects\\CICD Code coverage_working\\UnitTestCase\\UnitTestCase.csproj",
         "projectName": "UnitTestCase",
-        "projectPath": "D:\\Projects\\CICD Code coverage\\UnitTestCase\\UnitTestCase.csproj",
+        "projectPath": "D:\\Projects\\CICD Code coverage_working\\UnitTestCase\\UnitTestCase.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\CICD Code coverage\\UnitTestCase\\obj\\",
+        "outputPath": "D:\\Projects\\CICD Code coverage_working\\UnitTestCase\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

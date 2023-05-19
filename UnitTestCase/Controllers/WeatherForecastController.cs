@@ -13,16 +13,15 @@ namespace UnitTestCase.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController()
-        {
-        }
+       
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
+        [HttpGet]
+        [Route("GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
@@ -34,8 +33,9 @@ namespace UnitTestCase.Controllers
             .ToArray();
         }
 
-        [HttpGet(Name = "GetWeatherForecastById")]
-        public IEnumerable<WeatherForecast> Get(int id)
+        [HttpGet]
+        [Route("GetWeatherForecastById")]
+        public IEnumerable<WeatherForecast> GetById(int id)
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
